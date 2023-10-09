@@ -1,0 +1,611 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API Documentation",
+        "version": "1.0.0",
+        "title": "Backend API Documentation"
+    },
+    "servers": [
+        "http://localhost:5000"
+    ],
+    "basePath": "/api",
+    "schemas": [
+        "http",
+        "htpps"
+    ],
+    "paths": {
+        "/user/register": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "To register a new user",
+                "description": "",
+                "operationId": "To register a new user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "To register a new user parameters",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Register"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/user/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Login user",
+                "description": "",
+                "operationId": "Login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Login parameters",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/user/getUsers": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "get user",
+                "description": "",
+                "operationId": "get",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                   
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/user/updateUser/{id}": {
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Update user",
+                "description": "",
+                "operationId": "Update",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "reuired": "true"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Login parameters",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Update"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/user/deleteUser/{id}": {
+            "delete": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "delete user",
+                "description": "",
+                "operationId": "delete",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "reuired": "true"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/contribute/addContribution": {
+            "post": {
+                "tags": [
+                    "Contribution"
+                ],
+                "summary": "Enter contributions of restaurant",
+                "description": "",
+                "operationId": "Add contribution",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "To add contribution",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Contribute"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/contribute/getContribution": {
+            "get": {
+                "tags": [
+                    "Contribution"
+                ],
+                "summary": "get contributions",
+                "description": "",
+                "operationId": "get contribution",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                   
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/contribute/getIndividualContribution/{id}": {
+            "get": {
+                "tags": [
+                    "Contribution"
+                ],
+                "summary": "get individual contribution",
+                "description": "",
+                "operationId": "get individual contro",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "reuired": "true"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/contribute/getPendingContribution": {
+            "get": {
+                "tags": [
+                    "Contribution"
+                ],
+                "summary": "get pending contributions",
+                "description": "",
+                "operationId": "get pending contro",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                   
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/contribute/getIndividualPendingContribution/{id}": {
+            "get": {
+                "tags": [
+                    "Contribution"
+                ],
+                "summary": "get individual pending contribution",
+                "description": "",
+                "operationId": "get individual pending contro",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "reuired": "true"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/contribute/getContributionInLocation/{location}": {
+            "get": {
+                "tags": [
+                    "Contribution"
+                ],
+                "summary": "get contributions made in locations",
+                "description": "",
+                "operationId": "get contro in location",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "location",
+                        "reuired": "true"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/contribute/approveContribution/{id}": {
+            "post": {
+                "tags": [
+                    "Contribution"
+                ],
+                "summary": "approve contribution",
+                "description": "",
+                "operationId": "approve contro",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "reuired": "true"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        }
+    },
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "definitions": {
+        "Register": {
+            "type": "object",
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "example": "User"
+                },
+                "last_name": {
+                    "type": "string",
+                    "example": "name"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "user@gmail.com"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "Abc@1234"
+                },
+                "contact": {
+                    "type": "integer",
+                    "example": "9986754321"
+                },
+                "restaurant": {
+                    "type": "string",
+                    "example": "Udupi Uphara"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "near xyz, street abc"
+                }
+            }
+        },
+        "Login": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "user@gmail.com"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "Abc@1234"
+                }
+            }
+        },
+        "Update": {
+            "type": "object",
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "example": "User"
+                },
+                "last_name": {
+                    "type": "string",
+                    "example": "name"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "user@gmail.com"
+                },
+                "contact": {
+                    "type": "integer",
+                    "example": "9986754321"
+                },
+                "restaurant": {
+                    "type": "string",
+                    "example": "Udupi Uphara"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "near xyz, street abc"
+                }
+            }
+        },
+        "Contribute": {
+            "type": "object",
+            "properties": {
+                "restaurant_id": {
+                    "type": "string",
+                    "example": "1"
+                },
+                "contribution_kg": {
+                    "type": "integer",
+                    "example": "15"
+                },
+                "near_by": {
+                    "type": "string",
+                    "example": "JP nagar"
+                }
+            }
+        },
+        "ApiResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
